@@ -112,6 +112,10 @@ router.post("/uploadVideo",upload,(req, res,next) => {
 
 });
 
+
+
+
+
 */
 import express from "express";
 const router = express.Router();
@@ -139,9 +143,9 @@ const upload = multer({
 router.post("/uploadVideo", upload.single("file"), (req, res) => {
   generateThumbnail(
     // /api/videos is made publically available in App.js
-   // "http://127.0.0.1:" +
-      port +
-      "/videos/" +
+    "http://127.0.0.1:" +
+    port +
+    "/videos/" +
       req.file.filename.replace(/ /g, "_"),
     req.file.filename.replace(/ /g, "_")
     

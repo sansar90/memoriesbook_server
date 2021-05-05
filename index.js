@@ -28,6 +28,17 @@ app.use(cors());
 //app.use('/uploads', express.static('uploads'));
 app.use('/videos', express.static('media/uploads'));
 
+var dir='media'
+var subDir='media/uploads'
+var subSubDir='media/uploads/video_thumbnails'
+if(!fs.existsSync(dir)){
+  fs.mkdirSync(dir)
+
+  fs.mkdirSync(subDir)
+  fs.mkdirSync(subSubDir)
+}
+
+
 app.use('/posts',postRoutes);
 app.use("/user", userRoutes);
 app.use("/upload", uploadRoutes);
