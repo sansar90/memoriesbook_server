@@ -41,7 +41,7 @@ const generateThumbnail = (target, title ) => {
     uploaderName: "",
     uploadTitle: title,
     videoPath: target,
-    thumbnailPath: 'http://127.0.0.1:' + port + '/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
+    thumbnailPath: "https://memoriesbook2.herokuapp.com "+ '/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
   });
   videoDetails
     .save()

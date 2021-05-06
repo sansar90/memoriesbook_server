@@ -107,7 +107,8 @@ router.post("/uploadVideo",upload,(req, res,next) => {
       }
   })
     
- 
+ "http://127.0.0.1:" +
+    port +
 
 
 });
@@ -123,6 +124,7 @@ import multer from "multer";
 
 import generateThumbnail from "../helpers/videoThumbnail.js";
 const port = process.env.PORT|| 3000;
+const s="https://memoriesbook2.herokuapp.com";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -142,9 +144,9 @@ const upload = multer({
 
 router.post("/uploadVideo", upload.single("file"), (req, res) => {
   generateThumbnail(
-    // /api/videos is made publically available in App.js
-    "http://127.0.0.1:" +
-    port +
+    // /api/videos is made publically available in App.js 
+
+    s+
     "/videos/" +
       req.file.filename.replace(/ /g, "_"),
     req.file.filename.replace(/ /g, "_")
